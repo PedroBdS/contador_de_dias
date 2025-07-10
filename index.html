@@ -13,6 +13,12 @@
         <div id="anniversary"></div>
         <div class="heart">♥</div>
     </div>
+    <div id="qrcode"></div>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+    const link = "https://pedrobds.github.io/contador_de_dias_de_namoro/"; // coloque o link do seu site
+    new QRCode(document.getElementById("qrcode"), link);
+    </script>
 </body>
 </html>
