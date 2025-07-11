@@ -135,3 +135,23 @@ button:hover {
         padding: 0.6rem;
     }
 }
+
+.floating-heart {
+    position: absolute;
+    color: #e74c3c;
+    animation: subir 2s ease-out forwards;
+    font-size: 1.5rem;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes subir {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(1.5);
+    }
+}

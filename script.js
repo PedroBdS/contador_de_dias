@@ -25,6 +25,32 @@ function updateCounter() {
         
 }
 
+
+
 // Atualiza o contador ao carregar e a cada 1 minuto
 updateCounter();
 setInterval(updateCounter, 60000);
+
+function soltarCoracoes() {
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.innerText = '❤️';
+
+        // Define posição aleatória na horizontal
+        heart.style.left = Math.random() * 100 + 'vw';
+
+        // Define posição vertical de onde começa (centro da tela)
+        heart.style.top = '50%';
+
+        // Tamanho aleatório
+        heart.style.fontSize = (Math.random() * 10 + 10) + 'px';
+
+        document.body.appendChild(heart);
+
+        // Remove o coração após a animação
+        setTimeout(() => {
+            heart.remove();
+        }, 2000);
+    }
+}
