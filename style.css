@@ -53,9 +53,9 @@ h1 {
 
 .photo img {
     width: 100%;
-    max-width: 280px;
+    max-width: 230px;
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     margin: 1rem auto;
 }
 
@@ -68,9 +68,11 @@ h1 {
 button {
     margin-top: 1.5rem;
     padding: 0.7rem 1rem;
-    border: none;
+    border: 1;
     border-radius: 12px;
-    background-color: #e74c3c;
+    border-width: 1px;
+    border-color: #4c0000;
+    background-color: #e57265;
     color: white;
     font-size: 1rem;
     cursor: pointer;
