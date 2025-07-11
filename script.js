@@ -32,25 +32,47 @@ updateCounter();
 setInterval(updateCounter, 60000);
 
 function soltarCoracoes() {
-    for (let i = 0; i < 20; i++) {
+    const intervalo = 150; // ⏱ Tempo entre cada coração (em ms)
+    const total = 100;     // 🔢 Quantidade total de corações a serem gerados
+    const duracaoAnimacao = 6; // ⏳ Duração base da animação em segundos
+
+    let gerados = 0;
+    const timer = setInterval(() => {
+        if (gerados >= total) {
+            clearInterval(timer);
+            return;
+        }
+
         const heart = document.createElement('div');
         heart.classList.add('floating-heart');
         heart.innerText = '❤️';
 
-        // Define posição aleatória na horizontal
+        // Aparece na parte de baixo
+        heart.style.top = '90vh'; // bem próximo da base da tela
+
+        // Posição horizontal aleatória
         heart.style.left = Math.random() * 100 + 'vw';
 
-        // Define posição vertical de onde começa (centro da tela)
-        heart.style.top = '50%';
-
         // Tamanho aleatório
-        heart.style.fontSize = (Math.random() * 10 + 10) + 'px';
+        heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+
+        // Duração da animação (variação levemente aleatória)
+        heart.style.animationDuration = (Math.random() * 1 + duracaoAnimacao) + 's';
+
+        // Movimento horizontal aleatório
+        const xMove = (Math.random() * 60 - 30) + 'px'; // -30px a +30px
+        heart.style.setProperty('--x-move', xMove);
+
+        // Sem rotação
+        heart.style.setProperty('--rotation', '0deg');
 
         document.body.appendChild(heart);
 
-        // Remove o coração após a animação
+        // Remover após tempo suficiente
         setTimeout(() => {
             heart.remove();
-        }, 2000);
-    }
+        }, (duracaoAnimacao + 2) * 1000);
+
+        gerados++;
+    }, intervalo);
 }

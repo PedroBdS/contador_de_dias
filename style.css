@@ -138,20 +138,21 @@ button:hover {
 
 .floating-heart {
     position: absolute;
-    color: #e74c3c;
-    animation: subir 2s ease-out forwards;
-    font-size: 1.5rem;
     pointer-events: none;
+    animation-name: subir;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
     z-index: 10;
+    opacity: 0.8;
 }
 
 @keyframes subir {
     0% {
+        transform: translate(0, 0) scale(1);
         opacity: 1;
-        transform: translateY(0) scale(1);
     }
     100% {
+        transform: translate(var(--x-move), -300px) scale(1.5);
         opacity: 0;
-        transform: translateY(-200px) scale(1.5);
     }
 }
