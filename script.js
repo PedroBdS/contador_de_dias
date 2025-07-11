@@ -32,9 +32,9 @@ updateCounter();
 setInterval(updateCounter, 60000);
 
 function soltarCoracoes() {
-    const intervalo = 150; // ⏱ Tempo entre cada coração (em ms)
+    const intervalo = 50; // ⏱ Tempo entre cada coração (em ms)
     const total = 100;     // 🔢 Quantidade total de corações a serem gerados
-    const duracaoAnimacao = 6; // ⏳ Duração base da animação em segundos
+    const duracaoAnimacao = 2; // ⏳ Duração base da animação em segundos
 
     let gerados = 0;
     const timer = setInterval(() => {
