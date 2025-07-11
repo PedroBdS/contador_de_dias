@@ -5,20 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Contador de Amor</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="floating-hearts"></div>
+
     <div class="container">
-        <h1>❤️ Nossos Dias Juntos ❤️</h1>
+        <h1>Nosso Amor em Dias ❤️</h1>
+        <p class="subtitle">Cada dia ao seu lado é um presente, <strong>meu amor</strong>!</p>
+
         <div id="counter">Carregando...</div>
-        <div id="anniversary"></div>
-        <div class="heart">♥</div>
+
+        <div class="photo">
+            <img src="foto.png" alt="Nós dois">
+        </div>
+
+        <div class="heart">💖</div>
+
+        <button onclick="copyLink()">📎 Copiar link do presente</button>
+
+        <!-- <div id="anniversary"></div> -->
+        <!-- <div id="qrcode"></div> -->
     </div>
-    <!-- <div id="qrcode"></div> -->
+
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
-    const link = "https://pedrobds.github.io/contador_de_dias_de_namoro/"; // coloque o link do seu site
-    new QRCode(document.getElementById("qrcode"), link);
+        function copyLink() {
+            const link = "https://pedrobds.github.io/contador_de_dias_de_namoro/";
+            navigator.clipboard.writeText(link).then(() => {
+                alert("Link copiado com sucesso! 💌");
+            });
+        }
     </script>
 </body>
 </html>

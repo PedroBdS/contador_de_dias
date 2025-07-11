@@ -22,6 +22,7 @@ function updateCounter() {
     // Exibe mensagem especial
     document.getElementById("anniversary").innerText = 
         `Próximo aniversário: ${daysToAnniversary} dias restantes!`;
+        
 }
 
 // Atualiza o contador ao carregar e a cada 1 minuto
